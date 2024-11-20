@@ -1,0 +1,30 @@
+<h1>{{ name }}</h1>
+
+<dl>
+  <td>Nombre:</td>
+  <dd>{{ name }}</dd>
+
+  <td>Edad::</td>
+  <dd>{{ age }}</dd>
+
+  <td>Metodo:</td>
+  <dd>{{ getHeroDescription() }}</dd>
+
+  <td>Capitalizado:</td>
+  <dd>{{ capitalizaedName }}</dd>
+</dl>
+
+<!-- propiedades propias de angular ngIf false or true si lo va a mostrar en este caso el boton, un valor 0 es negativo y un valor -1 (negativo) es en este caso true debido a que es un valor-->
+<button
+  *ngIf="name !== 'Spiderman'"
+  (click)="changeHero('Spiderman')" class="btn btn-primary mx-2">
+  Cambiar nombre
+</button>
+
+<button
+  *ngIf="age !== 25"
+  (click)="changeAge(25)" class="btn btn-primary mx-2">
+  Cambiar edad
+</button>
+
+<button (click)="resetHero()" class="btn btn-primary">Reset valores</button>
