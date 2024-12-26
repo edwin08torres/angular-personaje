@@ -1,0 +1,19 @@
+<h1>DBZ Personajes</h1>
+<hr />
+
+<div class="row">
+  <div class="col">
+    <!-- el padre pasa un valor a la propiedad del componente hijo usando biding de propiedades con el [] -->
+    <!-- aca es donde el hijo proviniendo desde listcomponent manda el evento hacia el padre, y este realiza una accion -->
+    <dbz-list
+      (onDeleteCharacterEmit)="onDeleteCharacter($event)"
+      [characterList]="characters"
+      [title]="miTitulo"
+    ></dbz-list>
+  </div>
+  <div class="col">
+    <dbz-add-character
+      (onNewCharacter)="onNewCharacter($event)"
+    ></dbz-add-character>
+  </div>
+</div>
